@@ -8,7 +8,7 @@ data class MyDate(val year: Int, val month: Int, val dayOfMonth: Int): Comparabl
     }
 }
 
-fun MyDate.rangeTo(other: MyDate) = DateRange(this, other)
+operator fun MyDate.rangeTo(other: MyDate) = DateRange(this, other)
 
 class DateRange(
         public override val start: MyDate,
@@ -35,7 +35,7 @@ enum class TimeInterval {
 }
 
 class RepeatedTimeInterval(val timeInterval: TimeInterval, val number: Int)
-fun TimeInterval.times(number: Int) = RepeatedTimeInterval(this, number)
+operator fun TimeInterval.times(number: Int) = RepeatedTimeInterval(this, number)
 
-fun MyDate.plus(timeInterval: TimeInterval) = addTimeIntervals(timeInterval, 1)
-fun MyDate.plus(timeIntervals: RepeatedTimeInterval) = addTimeIntervals(timeIntervals.timeInterval, timeIntervals.number)
+operator fun MyDate.plus(timeInterval: TimeInterval) = addTimeIntervals(timeInterval, 1)
+operator fun MyDate.plus(timeIntervals: RepeatedTimeInterval) = addTimeIntervals(timeIntervals.timeInterval, timeIntervals.number)

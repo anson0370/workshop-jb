@@ -3,6 +3,8 @@ package iii_properties
 import kotlin.properties.Delegates
 import util.TODO
 import kotlin.properties.ReadWriteProperty
+import kotlin.properties.get
+import kotlin.properties.set
 
 class A(initializer: () -> Int) {
 
@@ -19,9 +21,9 @@ class B() {
 
 class Commodity(data: MutableMap<String, Any?>) {
 
-    val description: String by Delegates.mapVal(data)
-    var price: Int by Delegates.mapVar(data)
-    var isAvailable: Boolean by Delegates.mapVar(data)
+    val description: String by data
+    var price: Int by data
+    var isAvailable: Boolean by data
 }
 
 fun <T> todoTask20(): ReadWriteProperty<Commodity, T> = TODO(

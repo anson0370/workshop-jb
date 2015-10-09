@@ -31,7 +31,7 @@ fun todoTask23() = TODO(
     references = { syntax.javaCollections.useMutableSet(HashSet())}
 )
 
-fun buildMap<K, V>(build: MutableMap<K, V>.() -> Unit): Map<K, V> {
+fun <K, V> buildMap(build: MutableMap<K, V>.() -> Unit): Map<K, V> {
     val map = HashMap<K, V>()
     map.build()
     return map

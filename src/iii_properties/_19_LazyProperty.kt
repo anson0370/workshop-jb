@@ -5,8 +5,8 @@ import util.TODO
 class LazyProperty(val initializer: () -> Int) {
     private val lazyValue: Int? = null
         get() {
-            if ($lazyValue == null) $lazyValue = initializer()
-            return $lazyValue
+            if (field == null) field = initializer()
+            return field
         }
     val lazy: Int
         get() = lazyValue!!
