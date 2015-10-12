@@ -1,39 +1,15 @@
 package iv_builders
 
-import java.util.HashMap
-import util.TODO
-
-fun functions() {
-    // function
-    fun getLastChar(s: String) = s.charAt(s.length() - 1)
-    getLastChar("abc")
-
-    // extension function
-    fun String.lastChar() = this.charAt(this.length() - 1)
-    // 'this' can be omitted
-    fun String.lastChar2() = charAt(length() - 1)
-    "abc".lastChar()
-}
-
-
-fun functionLiterals() {
-    // function literal
-    val getLastChar: (String) -> Char = { s -> s.charAt(s.length() - 1) }
-    getLastChar("abc")
-
-    // extension function literal
-    val lastChar: String.() -> Char = { this.charAt(this.length() - 1) }
-    // 'this' can be omitted
-    val lastChar2: String.() -> Char = { charAt(length() - 1) }
-    "abc".lastChar()
-}
+import util.*
 
 fun todoTask22() = TODO(
     """
         Task 22.
-        Rewrite 'todoTask22()' so that 'x.isEven()' checks that x is even
-        and 'x.isOdd()' checks that x is odd.
-    """
+        Read about extension function literals.
+        You can declare `isEven` and `isOdd` as values, that can be called as extension functions.
+        Complete the declarations below.
+    """,
+    documentation = doc22()
 )
 
 fun task22(): List<Boolean> {

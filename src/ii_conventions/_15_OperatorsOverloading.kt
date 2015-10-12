@@ -1,29 +1,7 @@
 package ii_conventions
 
-import util.TODO
+import util.*
 import ii_conventions.TimeInterval.*
-
-fun infixNotation() {
-    fun Int.foo(s: String) = "$s$this"
-
-    1 foo "abc"
-    // the same as:
-    1.foo("abc")
-}
-
-// Predefined operators can be overloaded by the corresponding names.
-// A complete list of operators can be found in the syntax/OperatorOverloading.kt file.
-interface A {
-    operator fun plus(a: A): A
-    operator fun times(a: A): A
-    operator fun not(): A
-}
-
-fun use(a1: A, a2: A) {
-    a1 + a2
-    a1 * a2
-    !a1
-}
 
 fun todoTask15() = TODO(
     """

@@ -1,7 +1,7 @@
 package iv_builders
 
 import util.TODO
-import java.util.HashSet
+import java.util.*
 
 fun buildString(build: StringBuilder.() -> Unit): String {
     val stringBuilder = StringBuilder()
@@ -25,9 +25,7 @@ fun todoTask23() = TODO(
         Uncomment the commented code and make it compile.
         Add and implement function 'buildMap' with one parameter (of type extension function) creating a new HashMap,
         building it and returning it as a result.
-        Use MutableMap; look through the syntax/javaCollections.kt file for details.
-    """,
-    references = { syntax.javaCollections.useMutableSet(HashSet())}
+    """
 )
 
 fun task23(): Map<Int, String> {
