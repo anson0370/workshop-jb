@@ -8,8 +8,7 @@ class Sum(val left: Expr, val right: Expr) : Expr()
 
 fun eval(e: Expr): Int {
     if (e is Num) {
-        val n = e as Num
-        return n.value
+        return e.value
     }
     if (e is Sum) {
         // Actually, there is no need for a separate variable:
@@ -33,5 +32,9 @@ fun todoTask6(expr: Expr) = TODO(
     """,
     references = { JavaCode6().print(expr); syntax.ifWhenExpressions.whenWithoutArgument(42) })
 
-fun print(expr: Expr): String = todoTask6(expr)
-
+fun print(expr: Expr): String =
+        when (expr) {
+            is Num -> expr.value.toString()
+            is Sum -> "${print(expr.left)} + ${print(expr.right)}"
+            else -> throw IllegalArgumentException("Unknown expression")
+        }

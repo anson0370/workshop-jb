@@ -19,7 +19,4 @@ class _17_Invoke {
         testInvokable(5) { it()()()()() }
         testInvokable(0) { it }
     }
-
-    operator fun Invokable.invoke() = todoTask17()
-    fun Invokable.getNumberOfInvocations() = todoTask17()
 }

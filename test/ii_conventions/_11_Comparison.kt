@@ -20,6 +20,4 @@ class _11_Comparison {
         val second = MyDate(2014, 7, 11)
         Assert.assertTrue("The date ${first.s} should be after ${second.s}", first > second)
     }
-
-    operator fun MyDate.compareTo(other: MyDate): Int = todoTask11()
 }
